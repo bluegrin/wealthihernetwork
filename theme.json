@@ -1,0 +1,241 @@
+{
+  "version": 2,
+  "settings": {
+    "appearanceTools": true,
+    "typography": {
+      "fontFamilies": [
+        {
+          "fontFamily": "\"Nunito Sans\", sans-serif",
+          "name": "Nunito Sans",
+          "slug": "body",
+          "fontFace": [
+            {
+              "fontFamily": "Nunito Sans",
+              "fontWeight": "200",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": "file:.\/fonts\/nunito-sans-200.woff2"
+            },
+            {
+              "fontFamily": "Nunito Sans",
+              "fontWeight": "200",
+              "fontStyle": "italic",
+              "fontStretch": "normal",
+              "src": "file:.\/fonts\/nunito-sans-200-italic.woff2"
+            },
+            {
+              "fontFamily": "Nunito Sans",
+              "fontWeight": "300",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": "file:.\/fonts\/nunito-sans-300.woff2"
+            },
+            {
+              "fontFamily": "Nunito Sans",
+              "fontWeight": "300",
+              "fontStyle": "italic",
+              "fontStretch": "normal",
+              "src": "file:.\/fonts\/nunito-sans-300-italic.woff2"
+            },
+            {
+              "fontFamily": "Nunito Sans",
+              "fontWeight": "400",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": "file:.\/fonts\/nunito-sans-400.woff2"
+            },
+            {
+              "fontFamily": "Nunito Sans",
+              "fontWeight": "400",
+              "fontStyle": "italic",
+              "fontStretch": "normal",
+              "src": "file:.\/fonts\/nunito-sans-400-italic.woff2"
+            },
+            {
+              "fontFamily": "Nunito Sans",
+              "fontWeight": "600",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": "file:.\/fonts\/nunito-sans-600.woff2"
+            },
+            {
+              "fontFamily": "Nunito Sans",
+              "fontWeight": "600",
+              "fontStyle": "italic",
+              "fontStretch": "normal",
+              "src": "file:.\/fonts\/nunito-sans-600-italic.woff2"
+            },
+            {
+              "fontFamily": "Nunito Sans",
+              "fontWeight": "700",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": "file:.\/fonts\/nunito-sans-700.woff2"
+            },
+            {
+              "fontFamily": "Nunito Sans",
+              "fontWeight": "700",
+              "fontStyle": "italic",
+              "fontStretch": "normal",
+              "src": "file:.\/fonts\/nunito-sans-700-italic.woff2"
+            },
+            {
+              "fontFamily": "Nunito Sans",
+              "fontWeight": "800",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": "file:.\/fonts\/nunito-sans-800.woff2"
+            },
+            {
+              "fontFamily": "Nunito Sans",
+              "fontWeight": "800",
+              "fontStyle": "italic",
+              "fontStretch": "normal",
+              "src": "file:.\/fonts\/nunito-sans-800-italic.woff2"
+            },
+            {
+              "fontFamily": "Nunito Sans",
+              "fontWeight": "900",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": "file:.\/fonts\/nunito-sans-900.woff2"
+            },
+            {
+              "fontFamily": "Nunito Sans",
+              "fontWeight": "900",
+              "fontStyle": "italic",
+              "fontStretch": "normal",
+              "src": "file:.\/fonts\/nunito-sans-900-italic.woff2"
+            }
+          ]
+        },
+        {
+          "fontFamily": "\"EB Garamond\", serif",
+          "name": "EB Garamond",
+          "slug": "heading",
+          "fontFace": [
+            {
+              "fontFamily": "EB Garamond",
+              "fontWeight": "400",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": "file:.\/fonts\/eb-garamond-400.woff2"
+            },
+            {
+              "fontFamily": "EB Garamond",
+              "fontWeight": "400",
+              "fontStyle": "italic",
+              "fontStretch": "normal",
+              "src": "file:.\/fonts\/eb-garamond-400-italic.woff2"
+            },
+            {
+              "fontFamily": "EB Garamond",
+              "fontWeight": "500",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": "file:.\/fonts\/eb-garamond-500.woff2"
+            },
+            {
+              "fontFamily": "EB Garamond",
+              "fontWeight": "500",
+              "fontStyle": "italic",
+              "fontStretch": "normal",
+              "src": "file:.\/fonts\/eb-garamond-500-italic.woff2"
+            },
+            {
+              "fontFamily": "EB Garamond",
+              "fontWeight": "600",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": "file:.\/fonts\/eb-garamond-600.woff2"
+            },
+            {
+              "fontFamily": "EB Garamond",
+              "fontWeight": "600",
+              "fontStyle": "italic",
+              "fontStretch": "normal",
+              "src": "file:.\/fonts\/eb-garamond-600-italic.woff2"
+            },
+            {
+              "fontFamily": "EB Garamond",
+              "fontWeight": "700",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": "file:.\/fonts\/eb-garamond-700.woff2"
+            },
+            {
+              "fontFamily": "EB Garamond",
+              "fontWeight": "700",
+              "fontStyle": "italic",
+              "fontStretch": "normal",
+              "src": "file:.\/fonts\/eb-garamond-700-italic.woff2"
+            },
+            {
+              "fontFamily": "EB Garamond",
+              "fontWeight": "800",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": "file:.\/fonts\/eb-garamond-800.woff2"
+            },
+            {
+              "fontFamily": "EB Garamond",
+              "fontWeight": "800",
+              "fontStyle": "italic",
+              "fontStretch": "normal",
+              "src": "file:.\/fonts\/eb-garamond-800-italic.woff2"
+            },
+            {
+              "fontFamily": "EB Garamond",
+              "fontWeight": "900",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": "file:.\/fonts\/eb-garamond-900.woff2"
+            },
+            {
+              "fontFamily": "EB Garamond",
+              "fontWeight": "900",
+              "fontStyle": "italic",
+              "fontStretch": "normal",
+              "src": "file:.\/fonts\/eb-garamond-900-italic.woff2"
+            }
+          ]
+        },
+        {
+          "fontFamily": "\"South Signature\", cursive",
+          "name": "South Signature",
+          "slug": "title",
+          "fontFace": [
+            {
+              "fontFamily": "South Signature",
+              "fontWeight": "400",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": "file:.\/fonts\/south-signature-400.woff2"
+            }
+          ]
+        }
+      ],
+      "fontSizes": [
+        {
+          "slug": "small",
+          "size": "16px",
+          "name": "Small"
+        },
+        {
+          "slug": "medium",
+          "size": "24px",
+          "name": "Medium"
+        },
+        {
+          "slug": "large",
+          "size": "36px",
+          "name": "Large"
+        }
+      ]
+    },
+    "layout": {
+      "contentSize": "840px",
+      "wideSize": "1100px"
+    }
+  }
+}

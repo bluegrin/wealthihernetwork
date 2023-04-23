@@ -1,0 +1,120 @@
+body {
+  font-family: $font-body;
+  font-size: $font-size-base;
+  font-weight: 400;
+  
+  @include  break-tablet {
+    font-size: 24px;
+  }
+}
+
+a {
+  color: $swatch-primary;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  
+  &:link,
+  &:visited {
+    color: $swatch-primary;
+  }
+  
+  &:hover,
+  &:focus, 
+  &:active {
+    color: darken($swatch-primary, 10%);
+  }
+}
+
+body.page-template-default #main,
+body.page-template-champions #main {
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $font-heading;
+    font-weight: 400;
+  }
+
+  h2 {
+    font-size: 36px;
+    line-height: 47px;
+
+    &.has-small-font-size {
+      font-size: 32px;
+      line-height: 42px;
+    }
+
+    &.has-medium-font-size {
+      font-size: 36px;
+      line-height: 47px;
+    }
+
+    &.has-large-font-size {
+      font-size: 36px;
+      line-height: 47px;
+    }
+
+    @include break-tablet {
+      font-size: 64px;
+      line-height: 84px;
+
+      &.has-small-font-size {
+        font-size: 48px;
+        line-height: 63px;
+      }
+
+      &.has-medium-font-size {
+        font-size: 64px;
+        line-height: 84px;
+      }
+
+      &.has-large-font-size {
+        font-size: 64px;
+        line-height: 84px;
+      }
+    }
+  }
+
+  p, li {
+    font-size: 16px;
+    line-height: 22px;
+
+    &.has-small-font-size {
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    &.has-medium-font-size {
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    &.has-large-font-size {
+      font-size: 24px;
+      line-height: 33px;
+    }
+
+    @include break-tablet {
+      font-size: 20px;
+      line-height: 27px;
+
+      &.has-small-font-size {
+        font-size: 16px;
+        line-height: 22px;
+      }
+
+      &.has-medium-font-size {
+        font-size: 24px;
+        line-height: 33px;
+      }
+
+      &.has-large-font-size {
+        font-size: 36px;
+        line-height: 49px;
+      }
+    }
+  }
+
+}

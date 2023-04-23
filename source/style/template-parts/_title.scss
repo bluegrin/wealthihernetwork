@@ -1,0 +1,13 @@
+body {
+  &.layout-ungated {
+    @import "ungated/title";
+  }
+
+  &.layout-gated {
+    @import "gated/title";
+  }
+
+  &.layout-onboarding {
+    @import "onboarding/title";
+  }
+}

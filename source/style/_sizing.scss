@@ -1,0 +1,36 @@
+@use "sass:math";
+
+$scale: math.div(1600, 1728);
+
+$break-tablet: 768;
+$break-desktop: 1024;
+$break-retina: 1280;
+
+$font-anomaly: 6px;
+$font-size-base: 16px;
+
+$logo-width: 1400;
+$logo-height: 465;
+$site-logo-width: 250px;
+$site-logo-width-desktop: 350px;
+
+$site-header-font-size: $font-size-base;
+$site-header-padding: 24px;
+$site-header-nav-menu-font-size: 20px;
+$site-header-nav-menu-line-height: 27px;
+$site-header-button-h-padding: 10px;
+$site-header-button-v-padding: 15px;
+$site-header-logo-height: math.div($logo-height, $logo-width) * $site-logo-width;
+$site-header-button-height: ($site-header-button-h-padding * 2) + $site-header-font-size + $font-anomaly;
+$site-header-height: ($site-header-padding * 2) + $site-header-button-height;
+
+$site-header-logo-height-desktop: math.div($logo-height, $logo-width) * $site-logo-width-desktop;
+$site-header-height-desktop: ($site-header-padding * 4) + 1 + $site-header-button-height + $site-header-logo-height-desktop;
+
+$site-footer-font-size: $font-size-base;
+$site-footer-padding: 24px;
+$site-footer-nav-menu-font-size: 24px;
+
+$site-footer-padding-desktop: 80px;
+
+$container-width: $break-retina + px;

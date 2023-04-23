@@ -1,0 +1,131 @@
+body.page-template-default {
+  #main {
+    @include break-desktop {
+      margin-top: 96px;
+    }
+
+    > *,
+    .constrained {
+      max-width: 1520px;
+      margin: 0 24px 1rem 24px;
+
+      @media screen and (min-width: (1520 + 24 + 24) + px) {
+        margin: 0 auto;
+      }
+
+      &.is-style-fluid {
+        max-width: none;
+        margin: 0;
+      }
+    }
+    
+    .wp-block-columns {
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+    }
+
+    .wp-block-column {
+      margin-top: 0;
+      margin-bottom: 32px;
+
+      @include break-tablet {
+        margin-bottom: 48px;
+      }
+
+      @include break-desktop {
+        margin-bottom: 60px;
+      }
+    }
+
+    .wp-block-column,
+    .wp-block-group {
+      > * {
+        margin-top: 0;
+        margin-bottom: 1rem; //32px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        @include break-tablet {
+          //margin-bottom: 48px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+
+        @include break-desktop {
+          //margin-bottom: 60px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+
+        &.is-style-no-margin {
+          margin-bottom: 0;
+        }
+      }
+    }
+    
+    > h2, 
+    > h3, 
+    > h4,
+    .wp-block-group > h2, 
+    .wp-block-group > h3, 
+    .wp-block-group > h4, 
+    .wp-block-column > h2, 
+    .wp-block-column > h3, 
+    .wp-block-column > h4 {
+      font-size: 36px;
+      line-height: 47px;
+
+      @include break-desktop {
+        font-size: 64px;
+        line-height: 84px;
+      }
+
+      &.is-style-plain {
+        font-family: $font-body;
+        
+        &.has-medium-font-size {
+          font-size: 36px;
+          line-height: 49px;
+        }
+      }
+
+      &.is-style-fancy {
+        font-family: $font-title;
+        font-weight: 400;
+
+        &.has-large-font-size {
+          font-size: 58px !important;
+        }
+      }
+      
+      small {
+        display: block;
+      }
+    }
+
+    @include only-tablet {
+      .is-style-fluid {
+        .wp-block-column {
+          > {
+            h2, h3, p, ul, ol {
+              margin-right: 24px;
+              margin-left: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.block-waves {
+  .waves {
+    width: 100%;
+  }
+}

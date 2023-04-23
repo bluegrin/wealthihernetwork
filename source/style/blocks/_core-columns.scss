@@ -1,0 +1,15 @@
+.wp-block-columns {
+  @include only-tablet {
+    &.is-style-reverse {
+      flex-direction: column-reverse;
+    }
+  }
+}
+
+.wp-block-column {
+  &.is-style-spread {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}

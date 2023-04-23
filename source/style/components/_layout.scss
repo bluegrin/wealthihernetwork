@@ -1,0 +1,9 @@
+body {
+  &.layout-ungated {
+  }
+
+  &.layout-gated {
+    @import "gated/gravity-forms";
+    @import "gated/memberpress-forms";
+  }
+}

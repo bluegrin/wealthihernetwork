@@ -1,0 +1,65 @@
+body {
+  &.layout-onboarding {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+
+    #site-main {
+      flex-grow: 1;
+    }
+
+    &.login {
+      @include break-from(tablet) {
+        background-color: $swatch-merino;
+      }
+    }
+
+    &.sign-up-thank-you {
+      background-color: $swatch-pistachio;
+    }
+  }
+
+  &.layout-gated {
+    #site-main {
+      .main-header {
+        display: none;
+      }
+    }
+
+    @include break-from(desktop) {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      background-color: $swatch-merino;
+
+      #site-header {
+        flex-basis: 400px;
+        background-color: $swatch-royal-blue;
+      }
+
+      #site-main {
+        flex-basis: calc(100% - 400px);
+
+        .main-header {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          min-height: 97px;
+          margin: 0;
+          padding: 32px;
+          background-color: $swatch-royal-blue;
+        }
+      }
+
+      #site-footer {
+        flex-basis: 100%;
+      }
+    }
+
+    @import "gated/loop-course";
+    @import "gated/post-course";
+    @import "gated/post-event";
+    @import "gated/breadcrumbs";
+  }
+}

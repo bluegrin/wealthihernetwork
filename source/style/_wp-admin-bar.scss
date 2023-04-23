@@ -1,0 +1,22 @@
+$wp-admin-bar-height: 46px;
+$wp-admin-bar-height-desktop: 32px;
+
+body.admin-bar {
+  margin-top: $wp-admin-bar-height;
+  
+  #wpadminbar {
+    position: fixed;
+  }
+  
+  .site-header {
+    //top: $wp-admin-bar-height;
+  }
+  
+  @media screen and (min-width: 783px) {
+    margin-top: $wp-admin-bar-height-desktop;
+    
+    .site-header {
+      //top: $wp-admin-bar-height-desktop;
+    }
+  }
+}

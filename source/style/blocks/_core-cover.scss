@@ -1,0 +1,17 @@
+.wp-block-cover {
+  h2, h3, h4 {
+    margin: 0;
+  }
+  
+  .wp-block-button__link {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+
+    @include break-desktop {
+      font-size: 20px !important;
+    }
+
+    border: solid 2px $swatch-white !important;
+    color: $swatch-white !important;
+  }
+}

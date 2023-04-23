@@ -1,0 +1,42 @@
+.partners-marquee {
+  
+  .marquee {
+    padding: 24px;
+    background-color: $swatch-blush;
+    
+    @include break-tablet {
+      padding: 48px;
+    }
+    
+    @include break-desktop {
+      padding: 30px 90px;
+    }
+  }
+  
+  .waves {
+    width: 100%;
+    height: auto;
+    margin-top: -1px;
+
+    .waves-path {
+      fill: $swatch-blush;
+    }
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    
+    img {
+      width: 100%;
+      height: auto;
+      filter: grayscale(1) brightness(0.5);
+    }
+  }
+  
+  .splide__slide {
+    display: flex;
+    align-items: center;
+  }
+}

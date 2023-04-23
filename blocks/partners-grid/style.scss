@@ -1,0 +1,22 @@
+.partners-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 80px 170px;
+    margin: 0 100px;
+
+    .logo {
+      width: calc(calc(100% / 3) - 114px);
+
+      img {
+        width: 100%;
+        height: auto;
+        filter: grayscale(1) brightness(0.5);
+      }
+    }
+  
+  @include only-tablet {
+    display: none;
+  }
+}

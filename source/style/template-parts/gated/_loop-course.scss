@@ -1,0 +1,35 @@
+.entry-content-mpcs-course,
+.entry-content-tribe_events {
+  h2 {
+    margin: 43px 0 26px 0;
+    font-family: $font-heading;
+    font-weight: 400;
+    @include font-scale(24px, 31px, 32px 42px);
+    color: $swatch-royal-blue;
+  }
+  
+  .splide__track {
+    margin: 0 -4px;
+  }
+  
+  .splide__arrows {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .splide__arrow {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-family: $font-heading;
+    font-size: 64px;
+    color: $swatch-royal-blue;
+    background-color: transparent;
+    cursor: pointer;
+    
+    &:disabled {
+      color: #e2e2e2;
+    }
+  }
+}

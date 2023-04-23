@@ -1,0 +1,91 @@
+.courses-carousel {
+  padding: 0 24px;
+  position: relative;
+  margin-bottom: 64px !important;
+  
+  .course {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    background-color: #f8f8f8;
+    box-shadow: 0 4px 4px #00000033;
+    margin: 0 4px 4px 4px;
+    
+    .image {
+      width: 100%;
+      
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    
+    .details {
+      padding: 16px 30px;
+    }
+    
+    .name {
+      font-family: $font-heading;
+      font-size: 32px;
+      line-height: 32px;
+      margin: 0 0 16px 0;
+    }
+    
+    .categories {
+      margin: 0 0 16px 0;
+
+      .button {
+        font-size: 14px;
+        padding: 3px 11px;
+        text-transform: none;
+      }
+    }
+    
+    .excerpt {
+      font-family: $font-body;
+      font-size: 15px;
+      line-height: 20px;
+      margin: 0;
+    }
+    
+    .link {
+      display: block;
+      width: 100%;
+      text-transform: none;
+      text-align: center;
+      @include button-swatch($swatch-primary);
+      
+      &:after {
+        content: ' →';
+        display: inline;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 400;
+      }
+    }
+  }
+  
+  .splide__ {
+    &slide {
+      display: flex;
+    }
+    
+    &arrows {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0 4px;
+    }
+    
+    &arrow {
+      border: none;
+      background-color: transparent;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 40px;
+      font-weight: 400;
+      line-height: 1;
+      color: $swatch-black;
+    }
+  }
+}

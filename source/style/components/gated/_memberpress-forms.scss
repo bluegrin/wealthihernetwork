@@ -1,0 +1,82 @@
+@include break-to(tablet) {
+  .mp-form-row {
+    margin-bottom: 40px;
+  }
+}
+
+@include break-from(tablet) {
+  .mepr-form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 68px;
+    align-items: flex-start;
+
+    .mp-form-row {
+      flex-basis: calc((100% / 2) - 68px + (68px / 2));
+    }
+  }
+}
+
+.mepr-form {
+  max-width: 878px;
+
+  .mepr_spacer {
+    flex-basis: 100%;
+    font-size: 0;
+  }
+}
+
+
+.mepr-checkboxes-field-row {
+  display: inline-block;
+  margin: 0 8px 8px 0;
+  padding: 0;
+  font-family: $font-body;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 20px;
+  text-decoration: none;
+  border: solid 1px $swatch-royal-blue;
+  color: $swatch-royal-blue;
+  background-color: transparent;
+  cursor: pointer;
+  transition: color, border, background-color 0.25s ease-in-out;
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    display: none;
+  }
+
+  label {
+    display: block;
+    margin: 0;
+    padding: 11px 18px;
+    font-family: $font-body;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 20px;
+    cursor: pointer;
+  }
+
+  &:has(input[type="checkbox"]:checked),
+  &:has(input[type="radio"]:checked) {
+    color: $swatch-merino;
+    background-color: $swatch-royal-blue;
+  }
+}
+
+.mepr-submit {
+  width: 100%;
+  text-transform: none;
+  color: $swatch-white;
+  background-color: $swatch-dusty-pink;
+
+  @include break-from(tablet) {
+    width: calc((100% / 2) - 68px + (68px / 2));
+  }
+}
+
+.mepr-account-change-password {
+  display: none;
+}

@@ -1,0 +1,9 @@
+body {
+  &.layout-ungated {
+    //@import "ungated/single-mpcs-lesson";
+  }
+
+  &.layout-gated {
+    @import "gated/single-mpcs-lesson";
+  }
+}

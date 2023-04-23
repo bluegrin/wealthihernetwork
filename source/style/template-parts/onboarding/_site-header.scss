@@ -1,0 +1,45 @@
+.site-header {
+  margin: 0;
+  padding: 32px;
+  line-height: 1;
+  background-color: $swatch-royal-blue;
+  
+  .logo,
+  .icon {
+    display: inline-block;
+  
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  .logo {
+    width: 250px;
+    height: 83px;
+    
+    img {
+      &.icon {
+        display: none;
+      }
+    }
+  }
+
+  .icon {
+    width: 55px;
+    height: 61px;
+    
+    @include break-from(tablet) {
+      width: 70px;
+      height: 71px;
+    }
+
+    img {
+      &.logo {
+        display: none;
+      }
+    }
+  }
+
+}

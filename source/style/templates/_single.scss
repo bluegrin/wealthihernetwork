@@ -1,0 +1,195 @@
+body.single {
+  article {
+    .image {
+      display: block;
+      width: 100%;
+      aspect-ratio: 428 / 294;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 428 / 294;
+        object-fit: cover;
+      }
+
+      @include break-tablet {
+        aspect-ratio: 834 / 361;
+
+        img {
+          aspect-ratio: 834 / 361;
+        }
+      }
+
+      @include break-desktop {
+        aspect-ratio: 1728 / 473;
+
+        img {
+          aspect-ratio: 1728 / 473;
+        }
+      }
+    }
+
+    .meta {
+      margin: 0 24px;
+
+      @include break-tablet {
+        margin: 0 40px;
+      }
+
+      @include break-desktop {
+        max-width: $break-desktop + px;
+        margin: 0 auto;
+      }
+    }
+
+    .author {
+      display: block;
+      margin: 32px 0 0 0;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 19px;
+      text-transform: uppercase;
+
+      @include break-tablet {
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+
+    .title {
+      display: block;
+      margin: 0 0 8px 0;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 33px;
+      color: $swatch-base;
+
+      @include break-tablet {
+        font-size: 40px;
+        line-height: 55px;
+      }
+
+      @include break-desktop {
+        font-size: 64px;
+        line-height: 87px;
+      }
+    }
+
+    .category {
+      display: inline-block;
+      margin: 0 8px 8px 0;
+      padding: 5px 26px;
+      border: solid 1px $swatch-base;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1;
+      @include link-color($swatch-base);
+
+      @include break-tablet {
+        padding: 10px 32px;
+        font-size: 20px;
+      }
+    }
+
+    .content {
+      margin: 24px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 22px;
+      color: $swatch-base;
+
+      @include break-tablet {
+        margin: 40px;
+        font-size: 20px;
+        line-height: 27px;
+      }
+
+      @include break-desktop {
+        max-width: $break-desktop + px;
+        margin: 64px auto 97px auto;
+        font-size: 20px;
+        line-height: 27px;
+      }
+
+      p {
+        margin: 0;
+
+        &:before {
+          content: ' ';
+          display: inline-block;
+          width: 60px;
+        }
+
+        &:first-child {
+          &:before {
+            content: none;
+          }
+        }
+      }
+
+      h1, h2, h3, h4, h5, h6, ul, ol, figure, blockquote {
+        + p {
+          &:before {
+            content: none;
+          }
+        }
+      }
+
+      .block-image {
+        margin: 32px auto !important;
+      }
+    }
+  }
+
+  .related {
+    margin: 0 24px;
+
+    @include break-tablet {
+      margin: 0 40px;
+    }
+
+    @include break-desktop {
+      margin: 0 64px;
+    }
+
+    @include only-tablet {
+      article {
+        &:nth-child(3),
+        &:nth-child(4) {
+          display: none;
+        }
+      }
+    }
+
+    h1 {
+      font-size: 36px;
+      line-height: 47px;
+
+      @include break-tablet {
+        font-size: 40px;
+        line-height: 52px;
+      }
+
+      @include break-desktop {
+        font-size: 64px;
+        line-height: 84px;
+      }
+    }
+  }
+}
+
+body.single:not(.single-post, .single-memberpressproduct, .single-mpcs-course, .single-mpcs-lesson, .single-mpcs-quiz, .single-tribe_events) {
+  .site-main {
+    margin: 0 24px;
+
+    @include break-tablet {
+      margin: 0 40px;
+    }
+
+    @include break-desktop {
+      max-width: $break-desktop + px;
+      margin: 0 auto 200px auto;
+    }
+  }
+}

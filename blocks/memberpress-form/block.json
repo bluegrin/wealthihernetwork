@@ -1,0 +1,19 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "wealthiher/memberpress-form",
+  "title": "MemberPress Form",
+  "category": "embed",
+  "icon": "universal-access-alt",
+  "description": "Displays a MemberPress account-related form",
+  "keywords": [ "form", "memberpress", "account" ],
+  "version": "0.1.0",
+  "textdomain": "wealthiher",
+  "attributes": {
+    "controllerAction": {
+      "enum": [ "home", "password", "payments", "subscriptions" ],
+      "default": "home" 
+    }
+  },
+  "editorScript": "file:./index.js"
+}

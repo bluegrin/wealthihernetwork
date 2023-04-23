@@ -1,0 +1,86 @@
+//body.page,
+//body.blog,
+//body.archive {
+  .title {
+    margin: 0;
+    text-align: center;
+
+    .bg {
+      padding: 37px 0;
+
+      &.waves- {
+        &top {
+          padding-top: 0;
+        }
+
+        &bottom {
+          padding-bottom: 0;
+        }
+      }
+    }
+
+    h1 {
+      margin: 0;
+      font-family: $font-title;
+      font-size: 64px;
+      font-weight: 400;
+      line-height: 100px;
+      color: $swatch-base;
+      text-align: center;
+
+      @include break-desktop {
+        font-size: 96px;
+        line-height: 151px;
+      }
+
+      small {
+        display: block;
+        font-family: $font-body;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 20px;
+        color: #a48c43;
+        text-transform: uppercase;
+
+        @include break-tablet {
+          font-size: 24px;
+          line-height: 33px;
+        }
+      }
+    }
+
+    .waves {
+      width: 100%;
+      height: auto;
+      margin-top: -1px;
+
+      &.top {
+        .waves-path {
+          fill: $site-header-background-solid;
+        }
+      }
+    }
+
+    @each $name, $swatch in $swatches {
+      &.bg-#{$name} {
+        .bg {
+          background-color: $swatch;
+        }
+
+        .waves.bottom .waves-path {
+          fill: $swatch;
+        }
+      }
+    }
+
+    &.has-bg {
+      h1 {
+        color: $swatch-white;
+
+        small {
+          color: $swatch-white
+        }
+      }
+    }
+  }
+//}

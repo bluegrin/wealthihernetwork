@@ -1,0 +1,87 @@
+.experts-blinds {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  
+  .expert {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    min-width: 62vw;
+    height: calc(51vw + 100px);
+    max-height: calc(70vh + 100px);
+    background-size: calc(62vw + 100px) auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 0.5s ease;
+    
+    .details {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      overflow: hidden;
+      padding: 17px 15px;
+      background-color: rgba(51, 74, 79, 0.58);
+      transition: all 0.5s ease;
+    }
+    
+    .name {
+      margin-bottom: 6px;
+      font-family: $font-heading;
+      font-size: 16px;
+      line-height: 1;
+      color: $swatch-white;
+      
+      @include break-tablet {
+        display: inline;
+        font-size: 16px;
+      }
+    }
+    
+    .position {
+      font-family: $font-body;
+      font-size: 13px;
+      line-height: 1;
+      text-transform: uppercase;
+      color: $swatch-white;
+      
+      @include break-tablet {
+        display: inline;
+        font-size: 15px;
+        
+        &:before {
+          content: '|';
+          display: inline;
+          margin: 0 8px;
+        }
+      }
+    }
+    
+    .button {
+      font-size: 16px;
+      padding: 6px 12px;
+      
+      @include break-tablet {
+        font-size: 20px;
+        padding: 15px 50px;
+      }
+    }
+    
+    &.closed {
+      flex-basis: 100%;
+      min-width: 0;
+      filter: grayscale(1);
+      cursor: pointer;
+      
+      .details {
+        width: 0;
+        padding: 0;
+      }
+    }
+  }
+  
+  @include only-mobile {
+    display: none;
+  }
+}

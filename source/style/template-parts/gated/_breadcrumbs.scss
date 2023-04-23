@@ -1,0 +1,33 @@
+nav.academy-breadcrumbs {
+  margin: 0 0 16px 0;
+  font-family: $font-heading;
+  font-weight: 400;
+  @include font-scale(20px, 26px);
+  
+  .academy-breadcrumb {
+    @include link-color($swatch-royal-blue, $swatch-royal-blue, false);
+
+    &.gray {
+      color: rgba(38, 55, 70, 0.38);
+      
+      @include link-color(rgba(38, 55, 70, 0.38), rgba(38, 55, 70, 0.38), false);
+    }
+  }
+  
+  .divider {
+    color: rgba(38, 55, 70, 0.38);
+    
+    &:after {
+      content: ' > ';
+    }
+  }
+  
+  a {
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+    }
+  }
+}

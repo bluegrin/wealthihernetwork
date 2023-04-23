@@ -1,0 +1,68 @@
+@mixin break-tablet {
+  @media screen and (min-width: $break-tablet + px) {
+    @content
+  }
+}
+
+@mixin break-desktop {
+  @media screen and (min-width: $break-desktop + px) {
+    @content
+  }
+}
+
+@mixin break-retina {
+  @media screen and (min-width: ($break-retina + 48) + px) {
+    @content
+  }
+}
+
+@mixin break-custom( $breakpoint ) {
+  @media screen and (min-width: $breakpoint + px) {
+    @content
+  }
+}
+
+@mixin only-mobile {
+  @media screen and (max-width: ($break-tablet - 1) + px) {
+    @content
+  }
+}
+
+@mixin only-tablet {
+  @media screen and (max-width: ($break-desktop - 1) + px) {
+    @content
+  }
+}
+
+@mixin only-desktop {
+  @media screen and (max-width: ($break-retina - 1) + px) {
+    @content
+  }
+}
+
+body {
+  margin: 0;
+  
+  @include break-desktop {
+    margin-top: $site-header-logo-height-desktop 0 0 0;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@mixin block {
+  display: block;
+  font-size: 0;
+  line-height: 0;
+  
+  p, li, h1, h2, h3, h4, h5, h6, label, input, select, textarea {
+    font-size: 1rem;
+    line-height: inherit;
+  }
+}
+
+figure {
+  margin: 0;
+}

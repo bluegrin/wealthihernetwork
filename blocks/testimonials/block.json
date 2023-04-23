@@ -1,0 +1,16 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "wealthiher/testimonials",
+  "version": "0.1.0",
+  "title": "Testimonials",
+  "category": "text",
+  "icon": "universal-access-alt",
+  "supports": {
+    "html": false
+  },
+  "textdomain": "wealthiher",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

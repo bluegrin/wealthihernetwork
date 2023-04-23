@@ -1,0 +1,14 @@
+body {
+  &.layout-ungated,
+  &.layout-onboarding {
+    #site-footer {
+      background-color: #fff;
+    }
+
+    @import "ungated/site-footer";
+  }
+
+  &.layout-gated {
+    @import "gated/site-footer";
+  }
+}

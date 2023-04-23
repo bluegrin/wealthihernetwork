@@ -1,0 +1,79 @@
+aside.course-progress {
+  background-color: transparent;
+
+  h4 {
+    margin-top: 0 !important;
+    @include font-scale(24px, 31px);
+  }
+}
+
+ul.navigator-lessons {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  > li.navigator-lesson a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 16px;
+    height: 99px;
+    margin-top: 16px;
+    @include link-color($swatch-royal-blue, $swatch-royal-blue);
+    background-color: $swatch-white;
+
+    .thumbnail {
+      flex-basis: 77px;
+      flex-grow: 0;
+      flex-shrink: 1;
+      font-size: 0;
+
+      img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 77 / 99;
+        object-fit: cover;
+      }
+    }
+
+    .title {
+      flex-basis: calc(100% - 77px - 34px - (16px * 2) - 20px);
+      flex-grow: 1;
+      flex-shrink: 0;
+      font-weight: 400;
+      @include font-scale(16px, 22px);
+    }
+
+    .icon {
+      flex-basis: 34px + 20px;
+      flex-grow: 0;
+      flex-shrink: 1;
+      padding-right: 20px;
+
+      svg {
+        display: block;
+        width: 34px;
+        height: auto;
+        margin: 0 auto;
+      }
+
+      &.guide svg {
+        width: 17px;
+      }
+
+      &.activity svg {
+        width: 24px;
+      }
+    }
+  }
+}
+
+.view-more {
+  display: block;
+  margin: 16px auto 50px auto;
+  font-weight: 400;
+  @include font-scale(16px, 22px);
+  $link-color: rgba(red($swatch-white), green($swatch-white), blue($swatch-white), 0.4);
+  @include link-color($link-color, $link-color);
+  text-align: center;
+}

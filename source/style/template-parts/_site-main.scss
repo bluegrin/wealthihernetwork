@@ -1,0 +1,14 @@
+body {
+  &.layout-ungated {
+    @import "ungated/site-main";
+  }
+
+  &.layout-gated {
+    @import "gated/site-main";
+  }
+  
+  &.layout-onboarding {
+    @import "onboarding/site-main";
+    @import "onboarding/login";
+  }
+}

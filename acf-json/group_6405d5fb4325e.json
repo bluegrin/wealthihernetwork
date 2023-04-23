@@ -1,0 +1,107 @@
+{
+    "key": "group_6405d5fb4325e",
+    "title": "Lesson Images",
+    "fields": [
+        {
+            "key": "field_6405d5fca8d21",
+            "label": "Card Image",
+            "name": "card_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "695px × 285px or larger",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "wh-lesson-card"
+        },
+        {
+            "key": "field_6405da197ad71",
+            "label": "Sidebar Nav Image",
+            "name": "sidebar_nav_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "119px × 153px or larger",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "wh-lesson-side-nav"
+        },
+        {
+            "key": "field_6405da1b7ad72",
+            "label": "Bottom Nav Image",
+            "name": "bottom_nav_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "300px × 200px or larger",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "wh-lesson-bottom-nav"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "mpcs-lesson"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "mpcs-quiz"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1678180624
+}

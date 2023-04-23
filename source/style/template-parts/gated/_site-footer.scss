@@ -1,0 +1,76 @@
+.site-footer {
+  padding: 40px;
+  color: $swatch-royal-blue;
+  background-color: $swatch-merino;
+
+  .nav-menu {
+    > ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      row-gap: 32px;
+      justify-content: center;
+
+      @include break-from(tablet) {
+        column-gap: 80px;
+      }
+
+      > li {
+        flex-basis: 100%;
+
+        @include break-from(tablet) {
+          flex-basis: auto;
+        }
+      }
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      a {
+        font-size: 16px;
+        font-weight: 300;
+
+        @include link-color($swatch-royal-blue, $swatch-royal-blue);
+
+        @include break-tablet {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+
+  .social-menu {
+    > ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      column-gap: 21px;
+    }
+  }
+
+  .colophon {
+    width: 130px;
+    margin: 32px 44px 0 auto;
+    text-align: left;
+
+    @include break-from(desktop) {
+      width: 100%;
+      margin: 32px 0 0 0;
+      text-align: center;
+    }
+
+    &-text {
+      margin: 0;
+      padding: 0;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 19px;
+      text-transform: uppercase;
+    }
+  }
+}

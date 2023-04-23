@@ -1,0 +1,22 @@
+.bottom-cta {
+  height: 26px * $scale;
+  
+  h2 {
+    font-weight: 400;
+    
+    &.has-x-large-font-size {
+      font-size: 64px * $scale;
+      line-height: 84px * $scale;
+    }
+  }
+}
+
+.wp-block-columns {
+  &.middle-align {
+    .wp-block-column {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}

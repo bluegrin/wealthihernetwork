@@ -1,0 +1,101 @@
+/* BEGIN SWATCHES */
+$swatch-white: #fff;
+$swatch-black: #000;
+$swatch-royal-blue: #263746;
+$swatch-dark-teal: #36535c;
+$swatch-blush: #cb9e9b;
+$swatch-pistachio: #d7e7d8;
+$swatch-stone-blue: #555a6c;
+$swatch-soft-blush: #f2e7df;
+$swatch-soft-jade: #a1bdc4;
+$swatch-teal: #5894a2;
+$swatch-cherry: #9b2b2e;
+$swatch-dusty-pink: #d73f7a;
+$swatch-yellow: #ffde16;
+$swatch-gold: #b29442;
+$swatch-dark-blush: #ac817b;
+$swatch-tan: #e9ded0;
+$swatch-merino: #f5f1ea;
+/* END SWATCHES */
+
+
+$swatches: (
+  "white": $swatch-white, 
+  "black": $swatch-black, 
+  "royal-blue": $swatch-royal-blue, 
+  "dark-teal": $swatch-dark-teal, 
+  "blush": $swatch-blush, 
+  "pistachio": $swatch-pistachio, 
+  "stone-blue": $swatch-stone-blue, 
+  "soft-blush": $swatch-soft-blush, 
+  "soft-jade": $swatch-soft-jade, 
+  "teal": $swatch-teal, 
+  "cherry": $swatch-cherry, 
+  "dusty-pink": $swatch-dusty-pink, 
+  "yellow": $swatch-yellow, 
+  "gold": $swatch-gold,
+  "dark-blush": $swatch-dark-blush,
+  "tan": $swatch-tan,
+  "merino": $swatch-merino,
+);
+
+$swatch-base: $swatch-royal-blue;
+
+$swatch-primary: $swatch-teal;
+$swatch-secondary: #b74d72;
+
+$site-header-background: linear-gradient(180deg, rgba(0, 0, 0, 76%) 0px, rgba(255, 255, 255, 0%) 456px);
+$site-header-background-solid: $swatch-base;
+$site-header-color: $swatch-white;
+$site-header-border-color: #e1e1e1;
+
+$site-footer-background: #e9ded066;
+$site-footer-color: #000;
+
+$dark-header-primary-background: #c29993;
+$dark-header-primary-color: $swatch-white;
+
+$dark-header-secondary-background: #ac817b;
+$dark-header-secondary-color: $swatch-white;
+
+@each $name, $swatch in $swatches {
+  .color-#{$name},
+  .has-#{$name}-color {
+    color: $swatch !important;
+  }
+}
+
+@each $name, $swatch in $swatches {
+  .background-#{$name},
+  .has-#{$name}-background-color {
+    background-color: $swatch !important;
+  }
+}
+
+@each $name, $swatch in $swatches {
+  .fill-#{$name},
+  .has-#{$name}-fill-color {
+    .waves-path {
+      fill: $swatch !important;
+    }
+  }
+  
+  .smart-arrow.fill-#{$name} {
+    .arrow-path {
+      fill: $swatch !important;
+    }
+  }
+}
+
+body {
+  color: $swatch-royal-blue;
+}
+
+.has-background {
+  color: $swatch-white;
+}
+
+.color-black,
+.has-black-color {
+  color: $swatch-royal-blue !important;
+}

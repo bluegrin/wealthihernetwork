@@ -1,0 +1,25 @@
+#basic-user-avatar-form {
+  .avatar-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 32px;
+    
+    .avatar {
+      height: 82px;
+      width: 82px;
+      border-radius: 50%;
+    }
+  }
+  
+  label.button-link {
+    margin-bottom: 10px;
+    cursor: pointer;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

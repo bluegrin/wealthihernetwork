@@ -1,0 +1,131 @@
+.site-footer {
+  padding: $site-footer-padding;
+  color: $site-footer-color;
+  background-color: $site-footer-background;
+  background-image: url('./img/footer-feature.png');
+  background-position: bottom left;
+  background-repeat: no-repeat;
+
+  @include only-tablet {
+    background-size: auto 480px;
+    background-position-x: right;
+  }
+
+  @include only-mobile {
+    background-size: auto 400px;
+    background-position-x: -60px;
+  }
+
+  @include break-desktop {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: $site-footer-padding-desktop $site-footer-padding-desktop $site-footer-padding-desktop 30%;
+    position: relative;
+    background-image: none;
+
+    &:before {
+      content: ' ';
+      display: block;
+      width: 330px;
+      height: 520px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 2;
+      background-image: url('./img/footer-feature.png');
+      background-position: bottom left;
+      background-position-x: -30px;
+      background-repeat: no-repeat;
+      background-size: auto 520px;
+    }
+  }
+
+  .nav-menu {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 27px;
+
+      a {
+        font-size: 16px;
+        font-weight: 300;
+
+        @include link-color($swatch-base, $swatch-base);
+
+        @include break-tablet {
+          font-size: 24px;
+        }
+      }
+    }
+
+    @include break-desktop {
+      width: 55%;
+
+      > ul {
+        columns: 2;
+      }
+    }
+  }
+
+  .social-menu {
+    li {
+      display: inline-block;
+      width: 23px;
+      height: 23px;
+      margin-right: 20px;
+    }
+  }
+
+  .newsletter {
+    @include only-tablet {
+      max-width: 405px;
+    }
+
+    @include break-desktop {
+      width: 30%;
+    }
+  }
+
+  .colophon {
+    @include only-mobile {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      min-height: 400px;
+      width: 50%;
+      margin-top: 32px;
+      margin-left: auto;
+      padding-bottom: 50px;
+    }
+
+    @include only-tablet {
+      margin-top: 85px;
+    }
+
+    @include break-desktop {
+      width: 100%;
+    }
+
+    &-text {
+      margin: 0;
+      padding: 0;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 19px;
+      text-transform: uppercase;
+    }
+  }
+
+  h3 {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 33px;
+    text-transform: uppercase;
+  }
+}

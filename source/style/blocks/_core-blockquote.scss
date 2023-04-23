@@ -1,0 +1,9 @@
+.wp-block-quote {
+  margin-right: 0;
+  margin-left: 0;
+  font-family: $font-heading;
+  
+  &.as-caption {
+    margin-top: -60px !important;
+  }
+}

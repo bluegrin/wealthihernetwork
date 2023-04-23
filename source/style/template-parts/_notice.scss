@@ -1,0 +1,5 @@
+body {
+  &.layout-gated {
+    @import "gated/notice";
+  }
+}

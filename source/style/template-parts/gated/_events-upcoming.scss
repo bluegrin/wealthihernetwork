@@ -1,0 +1,43 @@
+.event {
+  @include margin-scale(0, 0, 0 0 483px 0);
+  background-color: $swatch-merino;
+
+  img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 326 / 93;
+    object-fit: cover;
+  }
+
+  .meta {
+    padding: 17px 24px;
+  }
+
+  .title {
+    margin: 0 0 8px 0;
+    font-family: $font-heading;
+    font-weight: 400;
+    @include font-scale(24px, 31px);
+    color: $swatch-royal-blue;
+  }
+
+  .tag {
+    display: inline-block;
+    margin: 0 8px 8px 0;
+    padding: 2px 10px;
+    @include font-scale(14px, 14px);
+    color: $swatch-royal-blue;
+    border: solid 1px $swatch-royal-blue;
+  }
+
+  .cta {
+    display: block;
+    width: 100%;
+    padding: 9px;
+    font-weight: 400;
+    @include font-scale(20px, 27px);
+    text-align: center;
+    @include link-color(#f8f8f8, #f8f8f8);
+    background-color: $swatch-teal;
+  }
+}

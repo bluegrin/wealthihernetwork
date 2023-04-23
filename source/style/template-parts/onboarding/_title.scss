@@ -1,0 +1,34 @@
+.title {
+  margin: 0 -24px;
+
+  @include break-from(tablet) {
+    margin: 0;
+  }
+
+  .bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 133px;
+    font-family: $font-heading;
+    font-weight: 400;
+    @include font-scale(24px, 31px);
+    color: $swatch-royal-blue;
+    background-color: $swatch-pistachio;
+    text-align: center;
+
+    @include break-from(tablet) {
+      min-height: 182px;
+    }
+
+    h1 {
+      font-family: $font-heading;
+      font-weight: 400;
+      @include font-scale(24px, 31px, 48px, 63px);
+
+      small {
+        display: block;
+      }
+    }
+  }
+}

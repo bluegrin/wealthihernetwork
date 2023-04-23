@@ -1,0 +1,119 @@
+article {
+  &.course,
+  &.lesson {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 12px);
+    margin: 4px 4px 8px 4px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+    .progress {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 8px;
+      margin: 0;
+
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+      }
+
+      &:before {
+        width: 100%;
+        background: $swatch-white;
+      }
+
+      &:after {
+        background: $swatch-yellow;
+      }
+
+      @for $i from 0 through 100 {
+        &.value-#{$i} {
+          &:after {
+            width: #{$i} + "%";
+          }
+        }
+      }
+    }
+
+    > img,
+    .thumbnail-placeholder {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 417 / 171;
+      object-fit: cover;
+      margin: 0;
+    }
+
+    .thumbnail-placeholder {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: $font-body;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 1;
+      text-transform: uppercase;
+      color: $swatch-teal;
+      background-color: $swatch-soft-blush;
+    }
+
+    .meta {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      margin: 0;
+      padding: 16px 32px;
+      background-color: $swatch-white;
+    }
+
+    .title {
+      flex-grow: 1;
+      margin: 0 0 8px 0;
+      font-family: $font-heading;
+      font-weight: 400;
+      @include font-scale(24px, 31px);
+      color: $swatch-royal-blue;
+    }
+
+    .action-plan {
+      display: block;
+      width: 100%;
+      padding: 9px;
+      font-weight: 400;
+      @include font-scale(20px, 27px);
+      text-align: center;
+      @include link-color($swatch-royal-blue, $swatch-royal-blue);
+      background-color: #c4d8de;
+    }
+
+    .cta {
+      display: block;
+      width: 100%;
+      padding: 9px;
+      font-weight: 400;
+      @include font-scale(20px, 27px);
+      text-align: center;
+    }
+  }
+
+  &.course {
+    .cta {
+      @include link-color($swatch-royal-blue, $swatch-royal-blue);
+      background-color: $swatch-merino;
+    }
+  }
+
+  &.lesson {
+    .cta {
+      @include link-color($swatch-white, $swatch-white);
+      background-color: $swatch-royal-blue;
+    }
+  }
+}

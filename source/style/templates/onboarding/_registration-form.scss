@@ -1,0 +1,132 @@
+#registration {
+  margin: 0 0 56px 0;
+
+  .heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 133px;
+    padding: 36px;
+    font-family: $font-heading;
+    font-weight: 400;
+    @include font-scale(24px, 32px, 48px, 63px);
+    color: $swatch-royal-blue;
+    background-color: $swatch-pistachio;
+    text-align: center;
+
+    @include break-from(tablet) {
+      min-height: 182px;
+    }
+  }
+
+  .section {
+    padding: 53px 46px;
+
+    @include break-from(tablet) {
+      margin: 0 auto;
+      padding: 128px 0 24px 0;
+      max-width: 405px;
+    }
+  }
+
+  .description,
+  label {
+    margin: 0 0 16px 0;
+    font-weight: 400;
+    @include font-scale(20px, 27px);
+    color: $swatch-royal-blue;
+  }
+
+  .messages {
+    min-height: 18px;
+    margin: 16px 0 0 0;
+    font-weight: 700;
+    @include font-scale(13px, 18px);
+    color: $swatch-teal;
+
+    &.error {
+      color: #b52222;
+
+      a {
+        @include link-color(#b52222);
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .navigation {
+    display: flex;
+    flex-direction: column-reverse;
+    row-gap: 16px;
+    margin: 0 78px;
+
+    .button {
+      width: 100%;
+    }
+
+    @include break-from(tablet) {
+      flex-direction: row;
+      column-gap: 40px;
+      max-width: 584px;
+      margin: 0 auto;
+    }
+  }
+
+  .busy {
+    overflow: hidden;
+    margin-left: 8px;
+    max-width: 20px;
+    transition: all 0.25s ease-in-out;
+
+    &.hidden {
+      max-width: 0;
+    }
+  }
+
+  .textarea-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    min-height: 240px;
+  }
+
+  .textarea-resizer {
+    display: grid;
+    width: 100%;
+
+    &:after {
+      content: attr(data-replicated-value) " ";
+      white-space: pre-wrap;
+      visibility: hidden;
+    }
+
+    > textarea {
+      resize: none;
+      overflow: hidden;
+    }
+
+    &:after,
+    > textarea {
+
+      display: inline;
+      width: 100%;
+      max-width: 500px;
+      margin: 0 0 32px 0;
+      padding: 0 0 11px 0;
+      border: none;
+      border-bottom: solid 1px $swatch-base;
+      font-family: $font-body;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 28px;
+      background-color: transparent;
+      outline: none;
+
+      &::placeholder {
+        color: #26374636;
+      }
+
+      grid-area: 1 / 1 / 1 / 1;
+    }
+  }
+}

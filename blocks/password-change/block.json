@@ -1,0 +1,14 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "wealthiher/password-change",
+  "version": "0.1.0",
+  "title": "Password Change",
+  "category": "memberpress",
+  "icon": "universal-access-alt",
+  "supports": {
+    "html": false
+  },
+  "textdomain": "wealthiher",
+  "editorScript": "file:./index.js"
+}

@@ -1,0 +1,287 @@
+.site-main {
+  @include padding-scale(32px 24px, 56px);
+
+  .secondary-nav {
+    padding: 0;
+    text-align: left;
+
+    @include break-to(desktop) {
+      margin: 0 -24px 32px -24px;
+      padding: 0 24px;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      scrollbar-width: none; // Firefox
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    @include break-from(desktop) {
+      margin: 0 0 56px 0;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      @include break-to(desktop) {
+        white-space: nowrap;
+      }
+    }
+
+    li {
+      margin-right: 24px;
+
+      &:after {
+        content: none;
+      }
+
+      a {
+        display: inline-block;
+        position: relative;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 33px;
+
+        &:hover {
+          &:before {
+            content: ' ';
+            display: block;
+            width: 100%;
+            height: 7px;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 100%;
+            background-image: url('./img/menu-active-royal-blue.svg');
+            background-size: 100% 7px;
+          }
+        }
+      }
+
+      &.current {
+        a {
+          &:before {
+            content: ' ';
+            display: block;
+            width: 100%;
+            height: 7px;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 100%;
+            background-image: url('./img/menu-active-royal-blue.svg');
+            background-size: 100% 7px;
+          }
+        }
+      }
+
+      a {
+        @include link-color($swatch-royal-blue, $swatch-royal-blue);
+      }
+
+    }
+  }
+
+  table {
+    border: none;
+    border-collapse: separate;
+    border-spacing: 2px;
+
+    > thead {
+      > tr {
+        > th {
+          padding: 8px;
+          font-weight: 700;
+          @include font-scale(20px, 27px);
+          text-align: left;
+          text-transform: none;
+          background-color: $swatch-tan;
+        }
+      }
+    }
+
+    > tbody {
+      > tr {
+        > td {
+          padding: 8px;
+          font-weight: 400;
+          @include font-scale(20px, 27px);
+          text-align: left;
+          text-transform: none;
+          background-color: darken($swatch-merino, 2.5%);
+        }
+
+        &:nth-child(even) {
+          > td {
+            background-color: $swatch-tan;
+          }
+        }
+      }
+    }
+  }
+
+  .mp_wrapper {
+    table {
+      &.mepr-account-table {
+        tr {
+          border: none;
+        }
+
+        th {
+          padding: 8px;
+          @include font-scale(20px, 27px);
+          letter-spacing: normal;
+          text-transform: none;
+        }
+
+        td {
+          border: none;
+        }
+
+        .mepr-account-actions a {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  .mepr {
+    &-active,
+    &-inactive {
+      padding: 5px 15px;
+      font-size: 75%;
+      line-height: 1;
+      color: #fff;
+      border-radius: 15px;
+    }
+
+    &-active {
+      background-color: $swatch-teal;
+    }
+
+    &-inactive {
+      background-color: $swatch-cherry;
+    }
+
+    &-account {
+      &-subscr-id {
+        display: none;
+      }
+
+      &-row-action {
+        @extend .button, .button-primary;
+        display: inline-block;
+        padding: 10px;
+        font-size: 16px;
+        line-height: 16px;
+        text-transform: none;
+      }
+    }
+
+    &-form {
+      &-input {
+        margin-bottom: 32px;
+      }
+    }
+
+    &_update_account_table {
+      max-width: 878px + 56px;
+
+      > div > strong {
+        display: block;
+        margin: 56px 0 32px 0;
+        padding: 0;
+        font-weight: 400;
+        @include font-scale(24px, 33px);
+        color: $swatch-royal-blue;
+      }
+
+      br {
+        display: none;
+      }
+    }
+
+    &-stripe-elements {
+      margin-bottom: 32px;
+    }
+  }
+
+  #mepr-account-payments-table {
+    td:last-child,
+    th:last-child {
+      display: none;
+    }
+  }
+
+  #mepr-account-subscriptions-table {
+    th,
+    td {
+      &:nth-child(3),
+      &:nth-child(6) {
+        text-align: center;
+      }
+    }
+  }
+}
+
+@at-root .mepr {
+  &-white-popup {
+    padding: 24px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 16%);
+
+    .mepr-upgrade-sub-text {
+      margin: 0 0 16px 0;
+      font-family: $font-heading;
+      font-weight: 400;
+      @include font-scale(32px, 42px);
+    }
+
+    .mepr-cancel-sub-text {
+      margin: 0 0 32px 0;
+      padding: 0;
+      @include font-scale(16px, 22px);
+      color: $swatch-royal-blue;
+
+      h1,
+      h2,
+      h3 {
+        margin: 0 0 16px 0;
+        font-family: $font-heading;
+        font-weight: 400;
+        @include font-scale(32px, 42px);
+      }
+
+      p {
+        margin: 0 0 16px 0;
+      }
+
+      * {
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .mepr-btn {
+      @extend .button, .button-secondary;
+      display: block;
+      width: 100%;
+      margin: 0 auto 16px auto;
+      padding: 10px 32px;
+      text-transform: none;
+      border-radius: 0;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@at-root .mfp-bg {
+  background-color: rgb(38, 55, 70);
+  opacity: 0.59;
+}

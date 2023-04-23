@@ -1,0 +1,72 @@
+.pagination {
+  text-align: center;
+  
+  .page-numbers {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    margin: 0 4px;
+    border-radius: 50%;
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+
+    &.current {
+      background-color: $swatch-base;
+      color: $swatch-white;
+    }
+  }
+  
+  a.page-numbers {
+    background-color: transparent;
+    color: $swatch-base;
+    transition: background-color 0.75s ease;
+
+    &:link,
+    &:visited {
+      background-color: transparent;
+      color: $swatch-base;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $swatch-soft-blush;
+      color: $swatch-base;
+    }
+
+    &.prev {
+      position: relative;
+      
+      &:before {
+        content: ' ';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        top: 12px;
+        left: 14px;
+        border-left: solid 2px $swatch-base;
+        border-bottom: solid 2px $swatch-base;
+        transform: rotate(45deg);
+      }
+    }
+
+    &.next {
+      position: relative;
+      
+      &:before {
+        content: ' ';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        top: 12px;
+        right: 14px;
+        border-right: solid 2px $swatch-base;
+        border-bottom: solid 2px $swatch-base;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}

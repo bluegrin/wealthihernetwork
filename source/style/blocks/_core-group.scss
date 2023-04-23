@@ -1,0 +1,22 @@
+.wp-block-group {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  padding: 24px;
+
+  @include break-tablet {
+    padding: 48px;
+  }
+
+  @each $name, $swatch in $swatches {
+    &.accent-#{$name},
+    &.has-#{$name}-accent {
+      padding: 24px;
+      border-top: solid 24px $swatch;
+      background-color: #fbfbfb;
+
+      & *:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+}

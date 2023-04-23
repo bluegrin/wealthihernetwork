@@ -1,0 +1,23 @@
+$break-tablet: 768;
+$break-desktop: 1024;
+$break-retina: 1280;
+
+$breakpoints: (
+  "tablet": $break-tablet,
+  "desktop": $break-desktop,
+  "retina": $break-retina,
+);
+
+@mixin break-from($breakpoint) {
+  @media screen and (min-width: map-get($breakpoints, $breakpoint) + px) {
+    @content;
+  }
+}
+
+@mixin break-to($breakpoint) {
+  @media screen and (max-width: (map-get($breakpoints, $breakpoint) - 1) + px) {
+    @content;
+  }
+}
+
+

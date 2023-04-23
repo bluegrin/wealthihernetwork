@@ -1,0 +1,73 @@
+body.page-template-champions {
+  main {
+    margin: 0 32px;
+  }
+
+  .partner-level-heading {
+    margin: 64px 0 42px 0;
+    font-size: 36px;
+    line-height: 47px;
+    text-align: center;
+    
+    @include break-tablet {
+      font-size: 64px;
+      line-height: 84px;
+    }
+  }
+  
+  .partner-heading {
+    margin: 62px 0 32px 0;
+    text-align: center;
+    
+    img {
+      display: block;
+      margin: 0 auto;
+      width: auto;
+      height: 45px;
+    }
+  }
+  
+  .champions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+    @media screen and (min-width: 1084px) {
+      gap: 54px;
+    }
+  }
+  
+  .champion {
+    display: inline-block;
+    width: calc(50% - 16px);
+    
+    @media screen and (min-width: 444px) {
+      width: 174px;
+    }
+
+    figure {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+    
+    figcaption {
+      display: block;
+      margin: 8px 0 0 0;
+      font-family: $font-heading;
+      font-size: 16px;
+      line-height: 21px;
+      text-align: center;
+    }
+  }
+}

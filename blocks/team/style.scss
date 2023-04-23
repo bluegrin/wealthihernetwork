@@ -1,0 +1,139 @@
+.team {
+  padding: 0 8px;
+  
+  @include break-tablet {
+    padding: 0 16px;
+  }
+  
+  @include break-desktop {
+    padding: 0 32px; 
+  }
+  
+  > ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+    
+    @include break-tablet {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    
+    > li {
+      display: block;
+      padding: 8px;
+      
+      @include break-tablet {
+        padding: 16px;
+      }
+      
+      .photo {
+        margin-bottom: 8px;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        aspect-ratio: 152 / 191;
+        position: relative;
+        
+        @include break-tablet {
+          margin-bottom: 16px;
+        }
+        
+        img {
+          width: 100%;
+          height: auto;
+          aspect-ratio: 152 / 191;
+          object-fit: cover;
+        }
+        
+        .social {
+          position: absolute;
+          top: 8px;
+          left: 8px;
+          color: $swatch-white;
+        }
+      }
+      
+      .position {
+        text-align: center;
+        font-family: $font-body;
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 1;
+        color: $swatch-white;
+        text-transform: uppercase;
+        text-shadow: 2px 2px 4px #000000cc;
+      }
+      
+      .name {
+        text-align: center;
+        font-family: $font-heading;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 1;
+        color: $swatch-white;
+        text-transform: capitalize;
+        text-shadow: 2px 2px 4px #000000cc;
+      }
+      
+      &.team-join {
+        .photo {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: 16px;
+          font-family: $font-heading;
+          color: $swatch-black;
+          text-align: center;
+          background-color: $swatch-white;
+          
+          h3 {
+            margin: 0 0 16px 0 !important;
+            font-size: 32px !important;
+            line-height: 32px !important;
+          }
+          
+          p {
+            margin: 0 !important;
+            font-size: 16px !important;
+            line-height: 16px !important;
+          }
+        }
+      }
+      
+      &:nth-child(1) {
+        background-color: $swatch-dusty-pink;
+      }
+      
+      &:nth-child(2) {
+        background-color: $swatch-pistachio;
+      }
+      
+      &:nth-child(3) {
+        background-color: $swatch-teal;
+      }
+      
+      &:nth-child(4) {
+        background-color: $swatch-yellow;
+      }
+      
+      &:nth-child(5) {
+        background-color: $swatch-blush;
+      }
+      
+      &:nth-child(6) {
+        background-color: $swatch-dark-teal;
+      }
+      
+      &:nth-child(7) {
+        background-color: $swatch-cherry;
+      }
+      
+      &:nth-child(8) {
+        background-color: $swatch-stone-blue;
+      }
+    }
+  }
+}

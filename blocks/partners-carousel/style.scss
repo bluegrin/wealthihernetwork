@@ -1,0 +1,45 @@
+.partners-carousel {
+  .cluster {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+
+    .logo {
+      width: calc(50% - 18px);
+
+      img {
+        width: 100%;
+        height: auto;
+        filter: grayscale(1) brightness(0.5);
+      }
+    }
+  }
+  
+  .splide__ {
+    &pagination {
+      margin: 0;
+      padding: 0;
+      
+      &__page {
+        width: 8px;
+        height: 8px;
+        margin: 0 8px;
+        padding: 0;
+        font-size: 0;
+        border-radius: 50%;
+        border: 0;
+        background-color: #D8C9B6;
+        
+        &.is-active {
+          background-color: #BCA991;
+        }
+      }
+    }
+  }
+  
+  @include break-desktop {
+    display: none;
+  }
+}

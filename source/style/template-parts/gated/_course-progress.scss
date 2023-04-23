@@ -1,0 +1,11 @@
+.course-progress {
+  .progress-bar {
+    &:before {
+      background-color: $swatch-white;
+    }
+
+    &:after {
+      background-color: $swatch-yellow;
+    }
+  }
+}

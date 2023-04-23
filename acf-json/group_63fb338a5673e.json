@@ -1,0 +1,71 @@
+{
+    "key": "group_63fb338a5673e",
+    "title": "Onboarding",
+    "fields": [
+        {
+            "key": "field_63fb338a174be",
+            "label": "Onboarding Group",
+            "name": "wh_onboarding_group",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "hidden": "Do Not Show",
+                "digital_pass": "Digital Pass",
+                "haute_membership": "Haute Membership"
+            },
+            "default_value": "hidden",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "vertical",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_63fb33c1174bf",
+            "label": "Onboarding Name",
+            "name": "wh_onboarding_name",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "memberpressproduct"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1677407346
+}
