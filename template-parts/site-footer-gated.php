@@ -12,6 +12,6 @@
     );
     ?>
     <div class="colophon">
-        <p class="colophon-text"><?= __wh( 'Copyright&nbsp;© WealthiHer&nbsp;2023' ) ?></p>
+        <p class="colophon-text"><?= __wh( 'Copyright&nbsp;© WealthiHer&nbsp;' ) ?><?php echo date( 'Y' ); ?></p>
     </div>
 </footer>

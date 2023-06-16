@@ -55,7 +55,7 @@ $applicants_results = $applicants_query->get_results();
         padding: 0
     }
 </style>
-<h1><?php esc_html_e( 'Haute Membership Applications' ); ?></h1>
+<h1><?php esc_html_e( 'All Access Pass Applications' ); ?></h1>
 <?php if ( ! empty( $applicants_query->get_results() ) ): ?>
 <table class="admin-report-table">
     <thead>

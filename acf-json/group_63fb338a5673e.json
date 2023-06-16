@@ -19,7 +19,7 @@
             "choices": {
                 "hidden": "Do Not Show",
                 "digital_pass": "Digital Pass",
-                "haute_membership": "Haute Membership"
+                "haute_membership": "All Access Pass"
             },
             "default_value": "hidden",
             "return_format": "value",

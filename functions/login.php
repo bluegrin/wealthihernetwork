@@ -55,7 +55,7 @@ function wealthiher_filter_login_link_separator( $value ) {
 }
 
 function wealthiher_filter_register( $registration_url ) {
-    return sprintf( '<span class="register">%s <a href="%s">%s</a></span>', __wh( 'Don\'t have an account?' ), esc_url( wp_registration_url() ), __wh( 'Sign Up Now' ) );
+    return sprintf( '<span class="register">%s <a href="%s">%s</a></span>', __wh( 'Don\'t have an account?' ), esc_url( wp_registration_url() ), __wh( 'Sign Up Options' ) );
 }
 
 function wealthiher_filter_login_site_html_link( $html_link ) {

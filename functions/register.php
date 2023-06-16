@@ -105,7 +105,7 @@ define( 'WEALTHIHER_REGISTRATION_FIELDS', array(
         'question' => 'Plan',
         'options' => array(
             'digital-pass' => 'Get the Digital Pass',
-            'haute-membership' => 'Apply to become a member',
+            'haute-membership' => 'Apply to become an All Access Member',
         ),
         'required' => true,
     ),
@@ -348,7 +348,7 @@ function wealthiher_action_ajax_validate_registration_memberpress() {
                     $messages[] = sprintf( 'If you are not redirected, please <a href="%s">click here</a>.', get_home_url() . '/application-submitted' );
                     $redirect = get_home_url() . '/application-submitted';
 
-                    $email_body = __wh( '<h1>Haute Membership Application Received</h1>' );
+                    $email_body = __wh( '<h1>All Access Pass Application Received</h1>' );
 
                     foreach ( $processing as $name => $config ) {
 
@@ -367,7 +367,7 @@ function wealthiher_action_ajax_validate_registration_memberpress() {
                     $email_body .= sprintf( '<p><a href="%s">%s</a></p>', get_edit_user_link( $user_id ), __wh( 'View Application' ) );
 
                     add_action(  'wp_mail_content_type', 'wealthiher_filter_wp_mail_content_type_register' );
-                    wp_mail( array( 'hello@whngroup.co', $_POST['user_email'] ), __wh( 'Haute Membership Application' ), $email_body );
+                    wp_mail( array( 'hello@whngroup.co', $_POST['user_email'] ), __wh( 'All Access Pass Application' ), $email_body );
                     remove_action( 'wp_mail_content_type', 'wealthiher_filter_wp_mail_content_type_register' );
 
                     break;
@@ -398,7 +398,7 @@ function wealthiher_action_ajax_validate_registration_memberpress() {
 function wealthiher_action_admin_menu_register() {
 
     add_menu_page(
-        __wh( 'Haute Membership Applications' ),
+        __wh( 'All Access Pass Applications' ),
         __wh( 'Applications' ),
         'manage_options',
         'wealthiher_applications',
@@ -421,7 +421,7 @@ function wealthiher_action_edit_user_profile_register( WP_User $profile_user ) {
             $email_body = sprintf( '<p>Dear %1$s</p><p>Congratulations! Your membership application has been approved! <a href="%2$s">Click here</a> to complete your membership or follow the link below.</p><p>%2$s</p><p>Regards</p><p>The WealthiHer Network Team</p>', $profile_user->first_name, wealthiher_application_complete_link( $profile_user ) );
 
             add_action(  'wp_mail_content_type', 'wealthiher_filter_wp_mail_content_type_register' );
-            wp_mail( $profile_user->user_email, __wh( 'Haute Membership Application' ), $email_body );
+            wp_mail( $profile_user->user_email, __wh( 'All Access Pass Application' ), $email_body );
             remove_action( 'wp_mail_content_type', 'wealthiher_filter_wp_mail_content_type_register' );
 
         }
@@ -440,7 +440,7 @@ function wealthiher_action_edit_user_profile_register( WP_User $profile_user ) {
 
         $status_label = $status_labels[ $application_status ] ?? $status_labels['pending'];
 ?>
-<h2><?php _ewh( 'Haute Membership Application' ); ?></h2>
+<h2><?php _ewh( 'All Access Pass Application' ); ?></h2>
 <p><b><?php _ewh( 'Status:' ); ?></b><br><?php echo $status_label; ?></p>
 <p><b><?php _ewh( WEALTHIHER_REGISTRATION_FIELDS['haute_question_1']['question'] ); ?></b><br><?php esc_html_e( get_user_meta( $profile_user->ID, 'haute_question_1', true ) ); ?></p>
 <p><b><?php _ewh( WEALTHIHER_REGISTRATION_FIELDS['haute_question_2']['question'] ); ?></b><br><?php esc_html_e( get_user_meta( $profile_user->ID, 'haute_question_2', true ) ); ?></p>

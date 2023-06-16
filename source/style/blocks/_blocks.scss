@@ -1,5 +1,5 @@
 body.page-template-default {
-  #main {
+  #entry-content {
     @include break-desktop {
       margin-top: 96px;
     }
@@ -8,6 +8,11 @@ body.page-template-default {
     .constrained {
       max-width: 1520px;
       margin: 0 24px 1rem 24px;
+
+      &.has-background,
+      &.wp-block-cover {
+        max-width: none;
+      }
 
       @media screen and (min-width: (1520 + 24 + 24) + px) {
         margin: 0 auto;
