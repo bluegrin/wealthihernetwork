@@ -133,14 +133,16 @@ define( 'WEALTHIHER_REGISTRATION_FIELDS', array(
         'type' => 'select',
         'label' => 'Salary',
         'question' => 'Your Salary',
+        'placeholder' => 'Choose --',
         'options' => array(
             'less-50k' => 'Less than ￡50k',
             '50k-100k' => '￡50k - ￡100k',
             '101k-150k' => '￡101k - ￡150k',
             '151k-250k' => '￡151k - ￡250k',
             'greater-251k' => '￡251k +',
-            'required' => true,
+            'private' => __wh( 'Prefer Not To Say' ),
         ),
+        'required' => true,
     ),
     'mepr_referral' => array(
         'section' => 'referral',
