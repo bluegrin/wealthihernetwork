@@ -151,7 +151,7 @@ jQuery(document).ready(($) => {
                 data[element.name] = element.value
             })
 
-            if (['membership', 'question2'].includes(data.section)) {
+            if (['membership', 'membership-haute'].includes(data.section)) {
                 $.each($('#registration').find('input, select, textarea').serializeArray(), function (i, element) {
                     if ('section' !== element.name) {
                         data[element.name] = element.value

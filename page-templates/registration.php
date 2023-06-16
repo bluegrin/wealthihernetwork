@@ -60,8 +60,13 @@ $haute_membership_sections = array(
         'field_labels' => true,
     ),
     'question2' => array(
-        'heading' => 'And lastly...',
+        'heading' => 'Just a few more steps',
         'field_labels' => true,
+    ),
+    'membership-haute' => array(
+        'heading' => 'And lastly...',
+        'description' => 'Choose your payment option',
+        'field_labels' => false,
         'submit_slide' => true,
     ),
 );

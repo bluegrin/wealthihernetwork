@@ -154,7 +154,7 @@ function wealthiher_action_mepr_checkout_before_submit() {
 
     echo '<div class="navigation">';
 
-    if ( WEALTHIHER_HAUTE_MEMBERSHIP_PRODUCT_ID == get_the_ID() ) {
+    if ( false == get_the_ID() ) {
 
         printf( '<button type="submit" id="registration-next" class="button button-primary mepr-submit">%s<span class="fas fa-spinner fa-spin busy mepr-loading-gif" style="display: none;"></span></button>', __wh( 'Finish' ) );
 
