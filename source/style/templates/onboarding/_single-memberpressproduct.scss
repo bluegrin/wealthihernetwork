@@ -23,8 +23,45 @@
     max-width: none;
   }
 
-  > *:not(.mp_wrapper, .sign-up-thank-you) {
+  > *:not(.mp_wrapper, .sign-up-thank-you, .onboarding-summary) {
     display: none;
+  }
+
+  h2.onboarding-summary {
+    max-width: 405px;
+    margin: 12px auto;
+    @extend label;
+  }
+
+  dl.onboarding-summary {
+    max-width: 405px;
+    margin: 12px auto 32px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1px;
+    font-size: 0.6em;
+    line-height: 1em;
+
+    $term-width: calc(35% - 1px + 0.5px);
+    $definition-width: calc(65% - 1px + 0.5px);
+
+    dt, dd {
+      padding: 12px;
+      background-color: $swatch-merino;
+    }
+
+    dt {
+      flex-basis: $term-width;
+      width: $term-width;
+      font-weight: 500;
+    }
+
+    dd {
+      flex-basis: $definition-width;
+      width: $definition-width;
+      margin: 0;
+    }
   }
 
   .mepr-checkboxes-field {

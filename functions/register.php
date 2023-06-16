@@ -31,7 +31,7 @@ define( 'WEALTHIHER_REGISTRATION_FIELDS', array(
         'label' => 'Password',
         'question' => 'Set a password',
         'placeholder' => 'set a password',
-        'required' => true,
+        'required' => ! is_user_logged_in(),
     ),
     'mepr_user_password_confirm' => array(
         'section' => 'password',
@@ -39,7 +39,7 @@ define( 'WEALTHIHER_REGISTRATION_FIELDS', array(
         'label' => 'Password Confirmation',
         'question' => 'Confirm your password',
         'placeholder' => 'confirm your password',
-        'required' => true,
+        'required' => ! is_user_logged_in(),
     ),
     'mepr_interests' => array(
         'section' => 'interests',
@@ -74,7 +74,7 @@ define( 'WEALTHIHER_REGISTRATION_FIELDS', array(
         'type' => 'select',
         'label' => 'Job Title',
         'question' => 'Job Title',
-        'placeholder' => 'CTO, Executive Director, Manager etc.',
+        'placeholder' => 'Choose --',
         'options' => array(
             'owner-founder' => 'Owner/Founder',
             'c-suite' => 'C Suite',
@@ -115,7 +115,7 @@ define( 'WEALTHIHER_REGISTRATION_FIELDS', array(
         'type' => 'radio',
         'label' => 'Membership',
         'question' => 'Membership',
-        'options' => wealthiher_digital_pass_options(),
+        'options' => wealthiher_membership_options( 'digital_pass' ),
         'required' => true,
     ),
     'haute_question_1' => array(
@@ -162,6 +162,15 @@ define( 'WEALTHIHER_REGISTRATION_FIELDS', array(
         'placeholder' => 'Begin typing here...',
         'required' => true,
     ),
+    'mepr_product_id_haute' => array(
+        'section' => 'membership-haute',
+        'journey' => 'haute-membership',
+        'type' => 'radio',
+        'label' => 'Membership',
+        'question' => 'Membership',
+        'options' => wealthiher_membership_options( 'haute_membership' ),
+        'required' => true,
+    ),
 ) );
 
 define( 'WEALTHIHER_HAUTE_MEMBERSHIP_PRODUCT_ID', 703 );
@@ -184,6 +193,7 @@ function wealthiher_filter_register_url( $register ) {
 }
 
 function wealthiher_filter_wp_mail_content_type_register() {
+
     return 'text/html';
 }
 
@@ -207,6 +217,8 @@ function wealthiher_action_ajax_validate_registration_memberpress() {
 
     $processing = array();
     $missing = array();
+
+    $wp_user = wp_get_current_user();
 
     foreach ( WEALTHIHER_REGISTRATION_FIELDS as $name => $config ) {
 
@@ -259,6 +271,10 @@ function wealthiher_action_ajax_validate_registration_memberpress() {
                     break;
                 }
 
+                if ( is_user_logged_in() && ! is_null( $wp_user ) && $email == $wp_user->user_email ) {
+                    break;
+                }
+
                 if ( get_user_by_email( $email ) instanceof WP_User ) {
                     $success = false;
                     $messages[] = sprintf( 'Email Address is already taken. Login <a href="%s" class="click-tap">here</a> or reset your password <a href="%s" class="click-tap">here</a>.', esc_url( wp_login_url() ), esc_url( wp_lostpassword_url() ) );
@@ -288,7 +304,9 @@ function wealthiher_action_ajax_validate_registration_memberpress() {
 
     if ( ! empty( $processing ) ) {
 
-        $wp_user = new WP_User;
+        if ( is_null( $wp_user ) ) {
+            $wp_user = new WP_User;
+        }
 
         $wp_user->user_login = $_POST['user_email'];
         $wp_user->user_email = $_POST['user_email'];
@@ -296,7 +314,7 @@ function wealthiher_action_ajax_validate_registration_memberpress() {
         $wp_user->last_name = $_POST['user_last_name'];
         $wp_user->user_pass = $_POST['mepr_user_password'];
 
-        $result = wp_insert_user( $wp_user );
+        $result = is_user_logged_in() ? wp_update_user( $wp_user ) : wp_insert_user( $wp_user );
 
         if ( $result instanceof WP_Error ) {
 
@@ -309,7 +327,6 @@ function wealthiher_action_ajax_validate_registration_memberpress() {
             }
 
         } else {
-
 
             $user_id = $result;
 
@@ -337,7 +354,7 @@ function wealthiher_action_ajax_validate_registration_memberpress() {
 
                     $messages[] = 'Redirecting you to the payment form. Please wait...';
                     $messages[] = sprintf( 'If you are not redirected, please <a href="%s">click here</a>.', get_permalink( $_POST['mepr_product_id'] ) );
-                    $redirect = get_permalink( $_POST['mepr_product_id'] );
+                    $redirect = add_query_arg( array( 'onboarding' => $submit ), get_permalink( $_POST['mepr_product_id'] ) );
 
                     break;
 
@@ -348,6 +365,9 @@ function wealthiher_action_ajax_validate_registration_memberpress() {
 
                     $messages[] = 'Redirecting you. Please wait...';
                     $messages[] = sprintf( 'If you are not redirected, please <a href="%s">click here</a>.', get_home_url() . '/application-submitted' );
+                    $redirect = add_query_arg( array( 'onboarding' => $submit ), get_permalink( $_POST['mepr_product_id_haute'] ) );
+
+                    /**
                     $redirect = get_home_url() . '/application-submitted';
 
                     $email_body = __wh( '<h1>All Access Pass Application Received</h1>' );
@@ -371,6 +391,7 @@ function wealthiher_action_ajax_validate_registration_memberpress() {
                     add_action(  'wp_mail_content_type', 'wealthiher_filter_wp_mail_content_type_register' );
                     wp_mail( array( 'hello@whngroup.co', $_POST['user_email'] ), __wh( 'All Access Pass Application' ), $email_body );
                     remove_action( 'wp_mail_content_type', 'wealthiher_filter_wp_mail_content_type_register' );
+                     */
 
                     break;
 
@@ -472,9 +493,9 @@ function wealthiher_callback_add_menu_page_applications() {
  * Functions
  */
 
-function wealthiher_digital_pass_options() {
+function wealthiher_membership_options( string $onboarding_group ) {
 
-    $digital_pass_options = array();
+    $options = array();
 
     $membership_query_args = array(
         'post_type' => array( 'memberpressproduct' ),
@@ -482,18 +503,18 @@ function wealthiher_digital_pass_options() {
         'meta_query' => array(
             array(
                 'key' => 'wh_onboarding_group',
-                'value' => 'digital_pass',
+                'value' => $onboarding_group,
             ),
         ),
     );
 
     foreach ( get_posts( $membership_query_args ) as $post ) {
         if ( $post instanceof WP_Post ) {
-            $digital_pass_options[ $post->ID ] = get_post_meta( $post->ID, 'wh_onboarding_name', true );
+            $options[ $post->ID ] = get_post_meta( $post->ID, 'wh_onboarding_name', true );
         }
     }
 
-    return $digital_pass_options;
+    return $options;
 }
 
 /**
