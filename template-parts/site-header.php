@@ -8,9 +8,8 @@
         <a href="/account/personal-details" class="button-registration button button-primary">Your Account</a>
         <?php elseif ( WH_PLUGIN_ACTIVE_MEMBERPRESS && ! MeprUtils::is_user_logged_in() ): ?>
             <a href="<?php echo esc_url( wp_login_url() ); ?>" class="button-registration button button-primary">Sign Up / Login</a>
-        <?php else: ?>
-        <a href="/membership" class="button-registration button button-primary">Learn More</a>
         <?php endif; ?>
+        <a href="/membership" class="button-registration button button-primary">Learn More</a>
     </div>
     <a href="<?= home_url() ?>" id="site-logo"><img src="<?= wh_img_url( 'wealthiher-network-logo.png' ) ?>" alt="WealthiHerNetwork" width="250" height="83"></a>
 	<?php

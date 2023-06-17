@@ -11,7 +11,7 @@ $fields = $args['fields'] ?? array();
     <?php if ( ! is_null( $description ) ): ?><div class="description"><?php echo $description; ?></div><?php endif; ?>
     <?php
 
-    if ( 'password' === $section ): ?>
+    if ( 'password' === $section && is_user_logged_in() ): ?>
     <p><?php _e( sprintf( 'You have already set a password. To change your password, <a href="%s" target="_blank">click here</a>.', esc_url( wp_lostpassword_url() ) ) ); ?></p>
     <?php else:
 
