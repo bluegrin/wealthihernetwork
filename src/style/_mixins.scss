@@ -1,0 +1,62 @@
+@mixin icon($name) {
+  background-image: url('../icons/' + $name + '.svg');
+}
+
+@mixin link-color($link-color, $active-color: darken($link-color, 10%), $force-underline: true) {
+  color: $link-color;
+  transition: color 0.75s ease;
+  
+  @if($force-underline) {
+    text-decoration: none;
+  }
+
+  &:link,
+  &:visited {
+    color: $link-color;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $active-color;
+  }
+}
+
+@mixin font-scale($mobile-size: 16px, $mobile-height: 22px, $tablet-size: $mobile-size, $tablet-height: $mobile-height, $desktop-size: $tablet-size, $desktop-height: $tablet-height) {
+  font-size: $mobile-size;
+  line-height: $mobile-height;
+  
+  @include break-from(tablet) {
+    font-size: $tablet-size;
+    line-height: $tablet-height;
+  }
+  
+  @include break-from(desktop) {
+    font-size: $desktop-size;
+    line-height: $desktop-height;
+  }
+}
+
+@mixin margin-scale($mobile, $tablet: $mobile, $desktop: $tablet) {
+  margin: $mobile;
+  
+  @include break-from(tablet) {
+    margin: $tablet;
+  }
+  
+  @include break-from(desktop) {
+    margin: $desktop;
+  }
+}
+
+@mixin padding-scale($mobile, $tablet: $mobile, $desktop: $tablet) {
+  padding: $mobile;
+  
+  @include break-from(tablet) {
+    padding: $tablet;
+  }
+  
+  @include break-from(desktop) {
+    padding: $desktop;
+  }
+}

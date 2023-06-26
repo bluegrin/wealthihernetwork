@@ -1,0 +1,80 @@
+@mixin button-swatch($swatch) {
+  padding: 15px 50px;
+  border: none;
+  background-color: $swatch;
+  color: $swatch-white;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: darken($swatch, 10%);
+  }
+
+  &:disabled {
+    background-color: rgba(red($swatch), green($swatch), blue($swatch), 35%);
+  }
+}
+
+.button {
+  display: inline-block;
+  font-family: $font-body;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.75s ease;
+
+  &.button-default {
+    padding: 5px 26px;
+    border: solid 1px $swatch-base;
+    color: $swatch-base;
+    background-color: transparent;
+  }
+
+  &.button-primary {
+    @include button-swatch($swatch-primary);
+  }
+
+  &.button-secondary {
+    @include button-swatch($swatch-secondary);
+  }
+
+  &.button-cta {
+    @include button-swatch($swatch-yellow);
+    color: #000 !important;
+  }
+
+  &.button-logout {
+    font-size: 16px;
+    line-height: 16px;
+    text-transform: none;
+    @include button-swatch(transparent);
+    padding: 10px 27px;
+    color: $swatch-primary;
+    border: solid 1px $swatch-primary;
+
+    &:after {
+      content: ' ';
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      margin-left: 16px;
+      @include icon('logout');
+      background-size: 16px;
+      background-position: center;
+      background-repeat: no-repeat;
+      transform: translateY(2px);
+    }
+  }
+}
+
+[type="button"],
+[type="reset"] {
+  @extend .button, .button-default;
+}
+
+[type="submit"] {
+  @extend .button, .button-primary;
+}

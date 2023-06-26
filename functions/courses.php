@@ -40,6 +40,6 @@ function wealthiher_action_init_courses() {
 function wealthiher_courses_callback( array $attributes, string $content, WP_Block $block_instance ) {
 
 	ob_start();
-	get_template_part( 'blocks/courses/template' );
+	get_template_part( 'template-parts/blocks/wealthiher-courses' );
 	return ob_get_clean();
 }

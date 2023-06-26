@@ -34,14 +34,14 @@ function wealthiher_action_init_experts() {
 function wealthiher_experts_callback( array $attributes, string $content, WP_Block $block_instance ) {
 
 	ob_start();
-	get_template_part( 'blocks/experts/template' );
+	get_template_part( 'template-parts/blocks/wealthiher-experts' );
 	return ob_get_clean();
 }
 
 function wealthiher_experts_blinds_callback( array $attributes, string $content, WP_Block $block_instance ) {
 
 	ob_start();
-	get_template_part( 'blocks/experts-blinds/template' );
+	get_template_part( 'template-parts/blocks/wealthiher-experts-blinds' );
 	return ob_get_clean();
 }
 

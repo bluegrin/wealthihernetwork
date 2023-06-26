@@ -2,10 +2,12 @@
   "name": "wealthiher-theme",
   "version": "1.0.0",
   "description": "A custom WordPress theme for the WealthiHer Network website",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "build": "wp-scripts build",
-    "start": "wp-scripts start"
+    "build:block-editor": "wp-scripts build --config-name=block-editor --mode=production",
+    "start:block-editor": "wp-scripts start --config-name=block-editor --mode=development",
+    "build:theme": "webpack build --config-name=theme --mode=production",
+    "start:theme": "webpack start --config-name=theme --mode=development"
   },
   "author": "Sweet Digital",
   "license": "UNLICENSED",
@@ -16,17 +18,9 @@
     "@wordpress/i18n": "^4.22.0",
     "@wordpress/scripts": "24.4.0",
     "autoprefixer": "^10.4.7",
-    "bootstrap-sass": "^3.4.3",
-    "cssnano": "^5.1.11",
-    "gulp": "^4.0.2",
-    "gulp-concat": "^2.6.1",
-    "gulp-connect": "^5.7.0",
-    "gulp-postcss": "^9.0.1",
-    "gulp-sass": "^5.1.0",
-    "gulp-terser": "^2.1.0",
-    "sass": "^1.52.3",
+    "concurrent": "^0.3.2",
     "webpack": "^5.80.0",
     "webpack-cli": "^5.0.2",
-    "webpack-stream": "^7.0.0"
+    "webpack-log": "^3.0.2"
   }
 }

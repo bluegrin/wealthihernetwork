@@ -11,7 +11,7 @@ define( 'WH_MAIN_THEME_ASSETS', array(
     array(
         'type' => 'style',
         'handle' => 'wealthiher',
-        'src' => get_stylesheet_directory_uri() . '/style.css',
+        'src' => get_stylesheet_directory_uri() . '/assets/main.css',
         'deps' => array( 'wp-block-library' ),
     ),
 
@@ -19,7 +19,7 @@ define( 'WH_MAIN_THEME_ASSETS', array(
     array(
         'type' => 'script',
         'handle' => 'wealthiher',
-        'src' => get_stylesheet_directory_uri() . '/scripts.js',
+        'src' => get_stylesheet_directory_uri() . '/assets/main.js',
         'deps' => array( 'jquery', 'splide' ),
         'localize' => true,
     ),
@@ -47,8 +47,8 @@ require_once 'inc/class-wealthiher-walker-nav-menu-social.php';
 require_once 'inc/class-wealthiher-walker-nav-menu-secondary.php';
 
 // Require blocks
-require_once 'blocks/core-image.php';
-require_once 'blocks/core-group.php';
+require_once 'functions/blocks/core-image.php';
+require_once 'functions/blocks/core-group.php';
 
 // Require functions
 require_once 'functions/login.php';
@@ -102,7 +102,7 @@ function wealthiher_action_init() {
 function wealthiher_action_admin_init() {
 
     add_theme_support( 'editor-styles' );
-    add_editor_style( 'style-editor.css' );
+    add_editor_style( 'build/main.css' );
 }
 
 function wealthiher_action_wp_enqueue_scripts() {
@@ -128,14 +128,17 @@ function wealthiher_action_wp_enqueue_scripts() {
 
 function wealthiher_action_admin_enqueue_scripts() {
 
+    $args = require_once 'build/main.asset.php';
+
 	$main_theme_assets = array(
 
 		// Gutenberg editor
 		array(
 			'type' => 'script',
 			'handle' => 'gutenberg',
-			'src' => get_template_directory_uri() . '/build/index.js',
+			'src' => get_template_directory_uri() . '/build/main.js',
 			'deps' => array( 'wp-edit-post', 'wp-element', 'wp-components', 'wp-plugins', 'wp-data' ),
+            'ver' => $args['version'],
 		),
 
 	);

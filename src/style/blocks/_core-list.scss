@@ -1,0 +1,36 @@
+ul {
+  &.is-style-checked {
+    list-style: none;
+    padding-left: 42px;
+    
+    > li {
+      position: relative;
+      margin: 22px 0;
+      
+      &:before {
+        content: ' ';
+        display: inline-block;
+        width: 26px;
+        height: 26px;
+        position: absolute;
+        top: 3px;
+        left: -42px;
+        @include icon( 'list-check' );
+        background-size: 26px;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+  
+  &.is-style-checked-disabled {
+    list-style: none;
+    padding-left: 42px;
+    
+    > li {
+      position: relative;
+      margin: 22px 0;
+      color: $swatch-soft-jade;
+    }
+  }
+}

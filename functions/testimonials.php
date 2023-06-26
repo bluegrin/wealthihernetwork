@@ -31,7 +31,7 @@ function wealthiher_action_init_testimonials() {
 function wealthiher_testimonials_callback( array $attributes, string $content, WP_Block $block_instance ) {
 
 	ob_start();
-	get_template_part( 'blocks/testimonials/template' );
+	get_template_part( 'template-parts/blocks/wealthiher-wealthiher-testimonials' );
 	return ob_get_clean();
 }
 

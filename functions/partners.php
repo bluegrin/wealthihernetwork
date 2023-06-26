@@ -139,20 +139,20 @@ function wealthiher_action_after_setup_theme_partners() {
 function wealthiher_partners_carousel_callback( array $attributes, string $content, WP_Block $block_instance ) {
 
 	ob_start();
-	get_template_part( 'blocks/partners-carousel/template' );
+	get_template_part( 'template-parts/blocks/wealthiher-partners-carousel' );
 	return ob_get_clean();
 }
 
 function wealthiher_partners_marquee_callback( array $attributes, string $content, WP_Block $block_instance ) {
 
 	ob_start();
-	get_template_part( 'blocks/partners-marquee/template' );
+	get_template_part( 'template-parts/blocks/wealthiher-partners-marquee' );
 	return ob_get_clean();
 }
 
 function wealthiher_partners_grid_callback( array $attributes, string $content, WP_Block $block_instance ) {
 
 	ob_start();
-	get_template_part( 'blocks/partners-grid/template' );
+	get_template_part( 'template-parts/blocks/wealthiher-partners-grid' );
 	return ob_get_clean();
 }

@@ -1,0 +1,212 @@
+label {
+  display: block;
+  margin: 0 0 16px 0;
+  padding: 0;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 27px;
+}
+
+input[type="color"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="phone"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+textarea,
+select {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 0 32px 0;
+  padding: 0 0 11px 0;
+  border: none;
+  border-bottom: solid 1px $swatch-base;
+  font-family: $font-body;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+  background-color: transparent;
+  outline: none;
+
+  &::placeholder {
+    color: #26374636;
+  }
+}
+
+label {
+  &:has(input[type="checkbox"], input[type="radio"]) {
+    display: block;
+    cursor: pointer;
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      margin: 0 5px 5px 0;
+      vertical-align: middle;
+      border: solid 2px $swatch-royal-blue;
+      background-color: transparent;
+
+      &:checked {
+        background-color: $swatch-royal-blue;
+        @include icon('check');
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+
+    input[type="radio"] {
+      border-radius: 50%;
+    }
+  }
+}
+
+label.button-check {
+  display: inline-block;
+  padding: 5px 26px;
+  font-family: $font-body;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color, border, background-color 0.75s ease;
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  &.button-unchecked {
+    border: solid 1px $swatch-base;
+    color: $swatch-base;
+    background-color: $swatch-white;
+  }
+
+  &.button-checked {
+    border: solid 1px $swatch-primary;
+    color: $swatch-white;
+    background-color: $swatch-primary;
+  }
+}
+
+.gform_wrapper {
+  max-width: 878px;
+}
+
+@include break-from(tablet) {
+  .gform_wrapper {
+    form {
+      &.columns {
+        .gform_fields {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          column-gap: 68px;
+          row-gap: 40px;
+
+          .gfield {
+            flex-basis: calc((100% / 2) - 68px + (64px / 2));
+          }
+        }
+      }
+
+      &:not(.columns) {
+        .gform_fields {
+          //width: calc((100% / 2) - 68px + (64px / 2));
+        }
+      }
+    }
+  }
+}
+
+.gform_fields {
+  fieldset {
+
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  legend {
+    margin: 0 0 16px 0;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 27px;
+  }
+
+  .gchoice {
+    display: inline-block;
+    margin: 0 8px 8px 0;
+    padding: 0;
+    font-family: $font-body;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 20px;
+    text-decoration: none;
+    border: solid 1px $swatch-royal-blue;
+    color: $swatch-royal-blue;
+    background-color: transparent;
+    cursor: pointer;
+    transition: color, border, background-color 0.25s ease-in-out;
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      display: none;
+    }
+
+    label {
+      display: block;
+      margin: 0;
+      padding: 11px 26px;
+      font-family: $font-body;
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 20px;
+      cursor: pointer;
+    }
+
+    &:has(input[type="checkbox"]:checked),
+    &:has(input[type="radio"]:checked) {
+      color: $swatch-merino;
+      background-color: $swatch-royal-blue;
+    }
+  }
+}
+
+.gform_required_legend {
+  display: none;
+}
+
+.gfield_required_asterisk {
+  margin-left: 4px;
+  color: $swatch-dusty-pink;
+}
+
+.ginput_container_radio {
+  margin-bottom: 32px;
+}
+
+.gform_footer {
+  margin-top: 48px;
+}
+
+.gform_button[type="submit"] {
+  width: 100%;
+  text-transform: none;
+  color: $swatch-white;
+  background-color: $swatch-dusty-pink;
+
+  @include break-from(tablet) {
+    //width: calc((100% / 2) - 68px + (64px / 2));
+  }
+}

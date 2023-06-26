@@ -1,0 +1,118 @@
+.testimonials-carousel {
+  margin: 0 0 80px 0 !important;
+  padding: 24px;
+  max-width: none !important;
+  background-color: $swatch-dark-teal;
+  
+  @include break-desktop {
+    padding: 60px;
+  }
+  
+  h2 {
+    font-size: 36px;
+    line-height: 47px;
+    color: $swatch-white;
+  }
+  
+  .testimonial {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 34px;
+  }
+  
+  .testimonial,
+  .testimonial p {
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
+    margin: 0;
+  }
+  
+  .open-quote,
+  .close-quote {
+    width: 100%;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    font-size: 2em;
+  }
+  
+  .open-quote {
+    text-align: left;
+    @include icon('quote-open');
+    background-position: left center;
+  }
+  
+  .close-quote {
+    text-align: right;
+    @include icon('quote-close');
+    background-position: right center;
+  }
+  
+  .splide__ {
+    &slide {
+      display: flex;
+      
+      &:nth-child(1) {
+        .testimonial {
+          background-color: $swatch-soft-blush;
+        }
+      }
+
+      &:nth-child(2) {
+        .testimonial {
+          background-color: $swatch-blush;
+        }
+      }
+
+      &:nth-child(3) {
+        .testimonial {
+          background-color: $swatch-pistachio;
+        }
+      }
+
+      &:nth-child(4) {
+        .testimonial {
+          background-color: $swatch-teal;
+        }
+      }
+      
+      @include break-retina {
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(4) {
+          //width: calc(((100% + 52px) / 5) - 52px) !important;
+        }
+        
+        &:nth-child(3) {
+          //width: calc((((100% + 52px) / 5) * 2) - 52px) !important;
+        }
+      }
+    }
+    
+    &pagination {
+      margin: 24px 0 0 0;
+      padding: 0;
+      
+      @include break-desktop {
+        margin: 0;
+      }
+
+      &__page {
+        width: 8px;
+        height: 8px;
+        margin: 0 8px;
+        padding: 0;
+        font-size: 0;
+        border-radius: 50%;
+        border: 0;
+        background-color: #D8C9B6;
+
+        &.is-active {
+          background-color: #BCA991;
+        }
+      }
+    }
+  }
+}
