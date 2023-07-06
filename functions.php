@@ -296,17 +296,18 @@ function wealthiher_layout_slug(): string {
             $layout_slug = 'onboarding';
         }
 
-        if ( is_user_logged_in() && in_array( $post->post_type, array(
-                'mpcs-course',
-                'mpcs-lesson',
-                'mpcs-quiz',
-                'tribe_events'
-            ) ) ) {
+        if ( is_user_logged_in() && in_array( $post->post_type, array( 'mpcs-course', 'mpcs-lesson', 'mpcs-quiz', 'tribe_events' ) ) ) {
             $layout_slug = 'gated';
         }
 
         if ( 'memberpressproduct' == $post->post_type ) {
             $layout_slug = 'onboarding';
+        }
+
+    } else if ( get_queried_object() instanceof WP_Post_Type ) {
+
+        if ( is_user_logged_in() && in_array( get_queried_object()->name, array( 'mpcs-course', 'mpcs-lesson', 'mpcs-quiz', 'tribe_events' ) ) ) {
+            $layout_slug = 'gated';
         }
 
     }
